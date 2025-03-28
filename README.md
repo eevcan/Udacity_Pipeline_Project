@@ -2,6 +2,7 @@
     The dataset consists of pre-labeled tweets and messages from real-life disaster events. 
     The goal of this project is to build a Natural Language Processing (NLP) model capable of categorizing messages in real-time. 
     The project is divided into these core sections: 
+    
 
 ## Getting Started Dependencies
 
@@ -12,6 +13,16 @@
     SQLite Libraries: SQLAlchemy
     Model Serialization: Pickle
     Web App & Data Visualization: Flask, Plotly
+
+
+# Data Cleaning
+
+    The Cleaning is done in: 
+    "Disaster_Response\data\ETL_Pipeline_Prep_V1"
+    for convenience ive already Prepared a cleaned File in the uploaded data
+    if wanted it could be repeated anytime.
+    
+
 
 # Executing Program:
 
