@@ -19,7 +19,7 @@
 
     The Cleaning is done in: 
     "Disaster_Response\data\ETL.py"
-    !U Need to change the filepath in this file aswell! (message; categories; database_filepath)
+    !U Need to change the filepath in this file aswell! (messages_filepath; categories_filepath; database_filepath)
     for convenience ive already Prepared a cleaned File in the uploaded data
     if wanted it could be repeated anytime.
     
