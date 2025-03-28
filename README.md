@@ -18,12 +18,22 @@
 
 
 ## Quick Start
+    
+    Execute in following order (no code Change required)
+        1. "Disaster_Response\ETL.py"
+        2. "Disaster_Response\train_classifier.py" (will take 15-20min to train the model)
+        3. "Disaster_Response\app\run.py"
+        4. Go to http://0.0.0.0:3001/
 
-Execute in following order (no code Change required)
-    1. "Disaster_Response\ETL.py"
-    2. "Disaster_Response\train_classifier.py" (will take 15-20min to train the model)
-    3. "Disaster_Response\app\run.py"
-    4. Go to http://0.0.0.0:3001/
+
+    bash:
+    cd
+    ->
+    python Disaster_Response/ETL.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+    python Disaster_Response/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+    python Disaster_Response/app/run.py
+    http://0.0.0.0:3001/
+
 
 
 
