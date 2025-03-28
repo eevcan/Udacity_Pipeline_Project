@@ -7,7 +7,7 @@
 
     Python 3.11
 
-    Machine Learning Libraries: NumPy, SciPy, Pandas, Scikit-Learn, sqlite3
+    Machine Learning Libraries: NumPy, SciPy, Pandas, Scikit-Learn, sqlite3, re, sqlite3
     NLP Libraries: NLTK
     SQLite Libraries: SQLAlchemy
     Model Serialization: Pickle
