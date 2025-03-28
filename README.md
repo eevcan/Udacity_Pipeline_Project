@@ -18,7 +18,7 @@
 # Data Cleaning
 
     The Cleaning is done in: 
-    "Disaster_Response\data\ETL_Pipeline_Prep_V1"
+    "Disaster_Response\data\ETL.py"
     for convenience ive already Prepared a cleaned File in the uploaded data
     if wanted it could be repeated anytime.
     
