@@ -48,3 +48,5 @@ Now run the following python script:
 once started u can test on this IP:
 
     Go to http://0.0.0.0:3001/
+
+# Example Prompt: *Help im hungry, thirsty and wounded*
