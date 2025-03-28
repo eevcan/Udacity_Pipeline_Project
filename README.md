@@ -1,6 +1,39 @@
-# Disaster Response Pipeline Project
+# Data Science Nanodegree Program by Udacity. 
+    The dataset consists of pre-labeled tweets and messages from real-life disaster events. 
+    The goal of this project is to build a Natural Language Processing (NLP) model capable of categorizing messages in real-time. 
+    The project is divided into these core sections: 
 
-1. Run the following command in the app's directory to run your web app.
-    `Disaster_Response\app\run.py`
+## Getting Started Dependencies
 
-2. Go to http://0.0.0.0:3001/
+    Python 3.11
+
+    Machine Learning Libraries: NumPy, SciPy, Pandas, Scikit-Learn, sqlite3
+    NLP Libraries: NLTK
+    SQLite Libraries: SQLAlchemy
+    Model Serialization: Pickle
+    Web App & Data Visualization: Flask, Plotly
+
+# Executing Program:
+
+## Generating .plk
+
+The Code is fully functional, unfortunately the *.pkl is too big to be uploaded,
+to generate a new one (this takes a while) u have to execute following python program:
+
+    Disaster_Response\models\train_classifier.py
+
+## Change Path
+
+U will need to open this and change the "db_path" so its working for ur system
+once generated (estimated 20min) u will have the model
+
+
+## Start Programm
+
+Now run the following python script:
+    
+    Disaster_Response\app\run.py
+
+once started u can test on this IP:
+
+    Go to http://0.0.0.0:3001/
