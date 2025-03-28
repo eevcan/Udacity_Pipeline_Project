@@ -15,11 +15,25 @@
     Web App & Data Visualization: Flask, Plotly
 
 
+
+
+## Quick Start
+
+Execute in following order (no code Change required)
+    1. "Disaster_Response\ETL.py"
+    2. "Disaster_Response\train_classifier.py" (will take 15-20min to train the model)
+    3. "Disaster_Response\app\run.py"
+    4. Go to http://0.0.0.0:3001/
+
+
+
+
+
+
 # Data Cleaning
 
     The Cleaning is done in: 
-    "Disaster_Response\data\ETL.py"
-    !U Need to change the filepath in this file aswell! (messages_filepath; categories_filepath; database_filepath)
+    "Disaster_Response\ETL.py"
     for convenience ive already Prepared a cleaned File in the uploaded data
     if wanted it could be repeated anytime.
     
@@ -32,12 +46,13 @@
 The Code is fully functional, unfortunately the *.pkl is too big to be uploaded,
 to generate a new one (this takes a while) u have to execute following python program:
 
-    Disaster_Response\models\train_classifier.py
+    Disaster_Response\train_classifier.py
 
 ## Change Path
 
 U will need to open this and change the "db_path" so its working for ur system
 once generated (estimated 20min) u will have the model
+
 
 
 ## Start Programm
@@ -49,5 +64,3 @@ Now run the following python script:
 once started u can test on this IP:
 
     Go to http://0.0.0.0:3001/
-
-# Example Prompt: *Help im hungry, thirsty and wounded*
