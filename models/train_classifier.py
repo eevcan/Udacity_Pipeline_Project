@@ -9,8 +9,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.multioutput import MultiOutputClassifier
 
-# Define the database path
-db_path = r'C:\\Users\\eev\\Documents\\Udacity\\Disaster_Response\\data\\Udacity_disaster.db'
+# Define the database path !U HAVE TO CHANGE THIS!
+db_path = 'C:\\Users\\eev\\Documents\\Udacity\\Disaster_Response\\data\\Udacity_disaster.db'
 
 def get_table_name(db_path):
     """Fetches the table name from the database"""
