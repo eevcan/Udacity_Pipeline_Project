@@ -44,28 +44,51 @@ def index():
     # Extract data needed for visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
-    
-    # Create visuals
-    graphs = [
-        {
-            'data': [
-                Bar(
-                    x=genre_names,
-                    y=genre_counts
-                )
-            ],
 
-            'layout': {
-                'title': 'Distribution of Message Genres',
-                'yaxis': {
-                    'title': "Count"
-                },
-                'xaxis': {
-                    'title': "Genre"
-                }
+    # Create visuals for genre distribution
+    genre_graph = {
+        'data': [
+            Bar(
+                x=genre_names,
+                y=genre_counts
+            )
+        ],
+        'layout': {
+            'title': 'Distribution of Message Genres',
+            'yaxis': {
+                'title': "Count"
+            },
+            'xaxis': {
+                'title': "Genre"
             }
         }
-    ]
+    }
+
+    # Extract category counts (from the columns starting from index 4 onward)
+    category_counts = df.iloc[:, 4:].sum()
+    category_names = list(category_counts.index)
+
+    # Create visuals for category distribution
+    category_graph = {
+        'data': [
+            Bar(
+                x=category_names,
+                y=category_counts
+            )
+        ],
+        'layout': {
+            'title': 'Distribution of Message Categories',
+            'yaxis': {
+                'title': "Count"
+            },
+            'xaxis': {
+                'title': "Category"
+            }
+        }
+    }
+
+    # Combine both graphs into a list
+    graphs = [genre_graph, category_graph]
     
     # Encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
@@ -84,8 +107,63 @@ def go():
     classification_labels = model.predict([query])[0]
     classification_results = dict(zip(df.columns[4:], classification_labels))
 
-    # This will render the go.html page with the results
-    return render_template('go.html', query=query, classification_result=classification_results)
+    # Extract data for visuals (genre and category counts)
+    genre_counts = df.groupby('genre').count()['message']
+    genre_names = list(genre_counts.index)
+
+    # Create the first bar chart (Genre Distribution)
+    genre_graph = {
+        'data': [
+            Bar(
+                x=genre_names,
+                y=genre_counts
+            )
+        ],
+
+        'layout': {
+            'title': 'Distribution of Message Genres',
+            'yaxis': {
+                'title': "Count"
+            },
+            'xaxis': {
+                'title': "Genre"
+            }
+        }
+    }
+
+    # Extract category counts (from the columns starting from index 4 onward)
+    category_counts = df.iloc[:, 4:].sum()
+    category_names = list(category_counts.index)
+
+    # Create the second bar chart (Category Distribution)
+    category_graph = {
+        'data': [
+            Bar(
+                x=category_names,
+                y=category_counts
+            )
+        ],
+
+        'layout': {
+            'title': 'Distribution of Message Categories',
+            'yaxis': {
+                'title': "Count"
+            },
+            'xaxis': {
+                'title': "Category"
+            }
+        }
+    }
+
+    # Combine both graphs into a list
+    graphs = [genre_graph, category_graph]
+    
+    # Encode plotly graphs in JSON
+    ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
+    graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
+
+    # This will render the go.html page with the results and the graphs
+    return render_template('go.html', query=query, classification_result=classification_results, graphJSON=graphJSON, ids=ids)
 
 
 def main():
