@@ -1,7 +1,24 @@
 # Data Science Nanodegree Program by Udacity. 
-    The dataset consists of pre-labeled tweets and messages from real-life disaster events. 
-    The goal of this project is to build a Natural Language Processing (NLP) model capable of categorizing messages in real-time. 
-    The project is divided into these core sections: 
+The dataset consists of pre-labeled tweets and messages from real-life disaster events. 
+The goal of this project is to build a Natural Language Processing (NLP) model capable of categorizing messages in real-time. 
+The project is divided into these core sections: 
+
+## Project Overview
+
+This project focuses on building a Natural Language Processing (NLP) model 
+designed to categorize messages from real-life disaster events, such as natural disasters or crises. 
+The model processes pre-labeled tweets and messages in real-time, enabling timely and accurate categorization of disaster-related information.
+Practical Impact & Benefits
+
+In the event of a disaster, this application can provide immediate value by quickly sorting and identifying critical messages. 
+By automating the categorization process, it ensures that emergency responders, organizations, and even affected individuals can access essential information quickly. 
+This can help direct resources to where they are needed most, prioritize emergency responses, and inform people of safety measures or updates in real-time.
+
+For disaster management organizations, this model could improve their situational awareness and decision-making by providing a clear understanding of public sentiment 
+and urgent requests in the midst of a crisis. It can also support non-profit organizations and governmental agencies in coordinating aid and optimizing rescue efforts.
+
+Through faster response times and better organization of critical data, the application can significantly reduce confusion during high-stress situations, 
+ultimately saving lives and improving recovery efforts in disaster scenarios.
     
 
 ## Getting Started Dependencies
