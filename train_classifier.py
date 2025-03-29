@@ -2,15 +2,13 @@ import sqlite3
 import pandas as pd
 import re
 import pickle
+import sys
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.multioutput import MultiOutputClassifier
-
-# Define the database path !U HAVE TO CHANGE THIS!
-db_path = 'data/Udacity_disaster.db'
 
 def get_table_name(db_path):
     """Fetches the table name from the database"""
@@ -59,6 +57,13 @@ def build_pipeline():
     return model
 
 def main():
+    if len(sys.argv) != 3:
+        print("Usage: python script.py database_filepath model_filepath")
+        sys.exit(1)
+
+    db_path = sys.argv[1]   # Get database path from command line
+    model_path = sys.argv[2]  # Get model save path from command line
+
     print("Loading data...")
     X, y = load_data(db_path)
     
@@ -79,8 +84,8 @@ def main():
         print(f"Evaluating category: {column}")
         print(classification_report(y_test[column], y_pred[:, i]))
     
-    print("Saving model...")
-    with open('classifier.pkl', 'wb') as f:
+    print(f"Saving model to {model_path}...")
+    with open(model_path, 'wb') as f:
         pickle.dump(model, f)
     
     print("Model saved successfully!")

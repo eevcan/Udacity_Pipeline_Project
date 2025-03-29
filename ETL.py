@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import sys
 from sqlalchemy import create_engine
 
 def load_data(messages_filepath, categories_filepath):
@@ -46,9 +47,10 @@ def save_data(df, database_filename):
 
 def main():
     # Define the file paths directly in the code
-    messages_filepath = 'data/disaster_messages.csv'
-    categories_filepath = 'data/disaster_categories.csv'
-    database_filepath = 'data/DisasterResponse.db'
+    #messages_filepath = 'data/disaster_messages.csv'
+    #categories_filepath = 'data/disaster_categories.csv'
+    #database_filepath = 'data/DisasterResponse.db'
+    messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
 
     # Load data
     df = load_data(messages_filepath, categories_filepath)
