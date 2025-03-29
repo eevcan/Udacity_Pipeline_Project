@@ -36,11 +36,16 @@ ultimately saving lives and improving recovery efforts in disaster scenarios.
 
 ## Quick Start
     bash:
-    cd (to the folder "Disaster_Response")
+    1. cd (to the folder "Disaster_Response")
+    
     ->
-    python ETL.py data/disaster_messages.csv data/disaster_categories.csv data/Udacity_disaster.db
-    python train_classifier.py data/Udacity_disaster.db models/classifier.pkl
-    python app/run_db.py
+    Important! you have to generate the .plk file (Step 3.)  which will take place in the models subfolder (placeholder,txt is just there to keep the folder)
+    i cannot upload it since its a big file -> this process will take 15-20minutes
+
+    
+    2. python ETL.py data/disaster_messages.csv data/disaster_categories.csv data/Udacity_disaster.db
+    3. python train_classifier.py data/Udacity_disaster.db models/classifier.pkl
+    4. python app/run_db.py
     http://0.0.0.0:3001/
 
 
