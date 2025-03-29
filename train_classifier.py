@@ -9,6 +9,12 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.multioutput import MultiOutputClassifier
+from nltk.stem import WordNetLemmatizer
+import nltk
+
+# Download required NLTK resources
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 def get_table_name(db_path):
     """Fetches the table name from the database"""
@@ -34,10 +40,20 @@ def load_data(db_path):
     return X, y
 
 def tokenize(text):
-    """Tokenizes text data"""
+    """Tokenizes and lemmatizes text data"""
+    # Initialize the lemmatizer
+    lemmatizer = WordNetLemmatizer()
+    
+    # Remove non-alphabetic characters and lowercase the text
     text = re.sub(r'[^a-zA-Z0-9]', ' ', text.lower())
+    
+    # Tokenize the text
     tokens = text.split()
-    return tokens
+    
+    # Lemmatize each token
+    lemmatized_tokens = [lemmatizer.lemmatize(word) for word in tokens]
+    
+    return lemmatized_tokens
 
 def build_pipeline():
     """Creates a machine learning pipeline"""
