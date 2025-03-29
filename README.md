@@ -22,7 +22,7 @@
     cd (to the folder "Disaster_Response")
     ->
     python ETL.py data/disaster_messages.csv data/disaster_categories.csv data/Udacity_disaster.db
-    python train_classifier.py data/Udacity_disaster.db models/classifier.pkl (15 - 20min)
+    python train_classifier.py data/Udacity_disaster.db models/classifier.pkl
     python app/run_db.py
     http://0.0.0.0:3001/
 
