@@ -22,7 +22,7 @@
     Execute in following order (no code Change required)
         1. "Disaster_Response\ETL.py"
         2. "Disaster_Response\train_classifier.py" (will take 15-20min to train the model)
-        3. "Disaster_Response\app\run.py"
+        3. "Disaster_Response\app\run_db.py"
         4. Go to http://0.0.0.0:3001/
 
 
